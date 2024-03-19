@@ -14,7 +14,7 @@ provider "aws" {
     region = "ap-northeast-3"
     shared_config_files =["/root/.aws/config"]  
     shared_credentials_files = ["/root/.aws/credentials"]
-    profile = "balu"
+    # profile = "balu"
 }
 
 
