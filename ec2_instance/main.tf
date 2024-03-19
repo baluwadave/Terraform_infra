@@ -1,5 +1,5 @@
 module "ec2_instance" {
-    source = "./ec2_instance/ec2"
+    source = "./ec2"
     count = 4
     ami =var.image_id
     instance_type = var.instance_type
