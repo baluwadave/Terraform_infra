@@ -1,4 +1,4 @@
-module "insatance" {
+module "ec2_instance" {
     source = "./ec2_instance/ec2"
     count = 4
     ami =var.image_id
