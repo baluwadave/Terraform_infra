@@ -34,7 +34,7 @@ terraform {
 
 
 module "My_instances" {
-    source = ".ec2_instance/ec2"
+    source = "./ec2"
     count = 4
     ami ="ami-021a9d8a7dda97aa5"
     instance_type = "t2.micro"
