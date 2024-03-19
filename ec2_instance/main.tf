@@ -35,11 +35,11 @@ terraform {
 
 module "My_instances" {
     source = "./ec2"
-    count = var.instance_count
-    ami =var.image_id
-    instance_type = var.instance_type
+    instance_count= 4
+    image_id ="ami-021a9d8a7dda97aa5 "
+    instance_type = t2.micro
     # vpc_security_group_ids = var.sg_id
-    key_name = var.key_name
-    Name= var.project
-    environment=var.environment
+    key_name = "pair"
+    project= "Terraform"
+    environment="Terraform-staging"
 }
