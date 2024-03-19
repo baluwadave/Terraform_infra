@@ -36,7 +36,7 @@ terraform {
 module "My_instances" {
     source = "./ec2"
     instance_count= 4
-    image_id ="ami-021a9d8a7dda97aa5 "
+    image_id ="ami-021a9d8a7dda97aa5"
     instance_type = "t2.micro"
     # vpc_security_group_ids = var.sg_id
     key_name = "pair"
