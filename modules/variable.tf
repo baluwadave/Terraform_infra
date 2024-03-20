@@ -30,7 +30,7 @@ variable "key_name" {
 # Add more variables as needed
 variable "subnet_id" {
     description = "This is my public subnet id "
-    default = module.vpc.subnet_id
+    default =module.aws_subnet.public-subnet.id
 }
 
 
