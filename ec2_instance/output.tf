@@ -1,3 +1,3 @@
-output "insatance" {
-    value="instance has been created"
+output "My_instances" {
+    value = aws_instance.My_instances[*].id
 }
