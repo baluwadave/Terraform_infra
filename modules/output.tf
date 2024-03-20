@@ -1,6 +1,6 @@
 output "instance_ids" {
   description = "The IDs of the created EC2 instances"
-  value       = module.my_instances[*].id
+  value       = module.my_instances[*].IDs
 }
 
 # output "public_ip_addresses" {
