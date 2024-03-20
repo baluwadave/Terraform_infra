@@ -26,6 +26,7 @@ module "ec2_instances" {
   instance_count = var.instance_count
   ami_id         = var.ami_id
   instance_type  = var.instance_type
+  key_name =var.key_name
 }
 
 # Other configurations can be added here
