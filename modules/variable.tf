@@ -28,3 +28,19 @@ variable "key_name" {
 # }
 
 # Add more variables as needed
+variable "subnet_id" {
+    description = "This is my public subnet id "
+    default = module.aws_vpc.subnet_id1.subnet_id
+}
+
+
+variable "private_subnet_cidr" {
+    description = "This is private subnet cidr"
+}
+
+variable "public_subnet_cidr" {
+    description = "This is my public subnet cidr range"
+}
+variable "vpc_cidr" {
+    description = "This is my cidr for terraform vpc"
+}
