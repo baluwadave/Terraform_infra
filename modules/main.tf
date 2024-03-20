@@ -28,13 +28,13 @@ provider "aws" {
 
 # Use the EC2 instances module
 module "my_instances" {
-  depends_on = [ module.vpc ]
+  depends_on = [ module.vpc.public_subnet_id ]
   source = "./ec2_instance"
   instance_count = var.instance_count
   ami_id         = var.ami_id
   instance_type  = var.instance_type
   key_name       = var.key_name
-  subnet_id = module.terraform-vpc.public_subnet_id
+  subnet_id = module.vpc.public_subnet_id
 }
 
 # Other configurations can be added here
