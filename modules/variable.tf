@@ -32,5 +32,3 @@ variable "subnet_id" {
     description = "This is my public subnet id "
     # default =module.terraform_vpc.public_subnet_id
 }
-
-
