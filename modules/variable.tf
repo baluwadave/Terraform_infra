@@ -13,4 +13,11 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+
+variable "aws_region" {
+    description = "This is region where instance want to be create"
+    default = "ap-northeast-3"
+  
+}
+
 # Add more variables as needed
