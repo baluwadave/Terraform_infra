@@ -1,6 +1,6 @@
 # Define EC2 instances
 resource "aws_instance" "my_instances" {
-  depends_on = [ vpc.subnet_id]
+#   depends_on = [ vpc.subnet_id]
   count         = var.instance_count
   ami           = var.ami_id
   instance_type = var.instance_type
