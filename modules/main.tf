@@ -21,11 +21,19 @@ provider "aws" {
 
 # Use the EC2 instances module
 module "my_instances" {
+  depends_on = [ module.vpc ]
   source = "./ec2_instance"
   instance_count = var.instance_count
   ami_id         = var.ami_id
   instance_type  = var.instance_type
   key_name       = var.key_name
+  subnet_id = var.subnet_id
 }
 
 # Other configurations can be added here
+module "vpc" {
+  source              = "./vpc"
+  private_subnet_cidr = var.private_subnet_cidr
+  public_subnet_cidr  = var.public_subnet_cidr
+  vpc_cidr            = var.vpc_cidr
+}
