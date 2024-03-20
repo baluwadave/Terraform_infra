@@ -21,7 +21,7 @@ provider "aws" {
 
 # Use the EC2 instances module
 module "ec2_instances" {
-  source = "./modules/ec2_instances"
+  source = "./modules/ec2_instance"
 
   instance_count = var.instance_count
   ami_id         = var.ami_id
