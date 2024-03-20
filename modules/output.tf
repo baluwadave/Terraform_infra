@@ -9,3 +9,7 @@ output "instance_ids" {
 # }
 
 # Add more outputs as needed
+output "subnet_id2" {
+    value = module.private-subnet.id
+    description = "This is Private subnet id"
+}
