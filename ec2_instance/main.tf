@@ -40,6 +40,6 @@ module "My_instances" {
     instance_type = "t2.micro"
     # vpc_security_group_ids = var.sg_id
     key_name = "pair"
-    project= "Terraform"
+    project= "Terraform" 
     environment="Terraform-staging"
 }
