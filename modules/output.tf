@@ -9,7 +9,7 @@ output "instance_ids" {
 # }
 
 # Add more outputs as needed
-output "subnet_id2" {
-    value = module.private-subnet.id
-    description = "This is Private subnet id"
+output "subnet_id1" {
+  value = module.vpc.public-subnet.id
+  description="This is my public subnet id"
 }
