@@ -42,4 +42,7 @@ module "My_instances" {
     key_name = "pair"
     project= "Terraform" 
     environment="Terraform-staging"
+
 }
+
+
