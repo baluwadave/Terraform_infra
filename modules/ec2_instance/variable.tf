@@ -17,3 +17,9 @@ variable "key_name" {
     default = "pair"
     description = "This is my key in that region"
 }
+
+
+
+variable "subnet_id" {
+  description = "This is subnet created while created vpc"
+}
