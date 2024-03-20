@@ -1,5 +1,5 @@
 
-resource "aws_vpc" "production-vpc" {
+resource "aws_vpc" "terraform-vpc" {
   cidr_block            = var.vpc_cidr
   enable_dns_hostnames  = true
 
@@ -10,7 +10,7 @@ resource "aws_vpc" "production-vpc" {
 
 resource "aws_subnet" "public-subnet" {
   cidr_block        = var.public_subnet_cidr
-  vpc_id            = aws_vpc.production-vpc.id
+  vpc_id            = aws_vpc.terraform-vpc.id
   availability_zone = "us-east-1a"
 
   tags = {
@@ -20,7 +20,7 @@ resource "aws_subnet" "public-subnet" {
 
 resource "aws_subnet" "private-subnet" {
   cidr_block        = var.private_subnet_cidr
-  vpc_id            = aws_vpc.production-vpc.id
+  vpc_id            = aws_vpc.terraform-vpc.id
   availability_zone = "us-east-1a"
 
   tags =  {
@@ -29,7 +29,7 @@ resource "aws_subnet" "private-subnet" {
 }
 
 resource "aws_route_table" "public-route-table" {
-  vpc_id = aws_vpc.production-vpc.id
+  vpc_id = aws_vpc.terraform-vpc.id
 
   tags =  {
     Name = "Public-Route-Table"
@@ -37,7 +37,7 @@ resource "aws_route_table" "public-route-table" {
 }
 
 resource "aws_route_table" "private-route-table" {
-  vpc_id = aws_vpc.production-vpc.id
+  vpc_id = aws_vpc.terraform-vpc.id
 
   tags =  {
     Name = "Private-Route-Table"
@@ -79,16 +79,16 @@ resource "aws_route_table_association" "private-subnet-association" {
 #   destination_cidr_block  = "0.0.0.0/0"
 # }
 
-resource "aws_internet_gateway" "production-igw" {
-  vpc_id = aws_vpc.production-vpc.id
+resource "aws_internet_gateway" "terraform-igw" {
+  vpc_id = aws_vpc.terraform-vpc.id
 
   tags =  {
-    Name = "Production-IGW"
+    Name = "Terraform-IGW"
   }
 }
 
 resource "aws_route" "public-internet-gw-route" {
   route_table_id          = aws_route_table.public-route-table.id
-  gateway_id              = aws_internet_gateway.production-igw.id
+  gateway_id              = aws_internet_gateway.terraform-igw.id
   destination_cidr_block  = "0.0.0.0/0"
 }
