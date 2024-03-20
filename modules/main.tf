@@ -40,7 +40,7 @@ module "my_instances" {
 # Other configurations can be added here
 module "vpc" {
   source              = "./vpc"
-  private_subnet_cidr = "10.0.4.0/24"
-  public_subnet_cidr  = "10.0.1.0/24"
-  vpc_cidr            = "10.0.0.0/16"
+  private_subnet_cidr = var.private_subnet_cidr
+  public_subnet_cidr  = var.public_subnet_cidr
+  vpc_cidr            = var.vpc_cidr
 }
