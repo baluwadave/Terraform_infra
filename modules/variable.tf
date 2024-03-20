@@ -26,9 +26,15 @@ variable "key_name" {
 #     default = "ap-northeast-3"
   
 # }
+variable "vpc_cidr" {
+  default = "10.0.0.0/16"
+}
 
-# Add more variables as needed
-variable "subnet_id" {
-    description = "This is my public subnet id "
-    # default =module.terraform_vpc.public_subnet_id
+
+variable "private_subnet_cidr" {
+  default = "10.0.1.0/24"
+}
+
+variable "public_subnet_cidr" {
+  default = "10.0.2.0/24"
 }
