@@ -34,13 +34,3 @@ variable "subnet_id" {
 }
 
 
-variable "private_subnet_cidr" {
-    description = "This is private subnet cidr"
-}
-
-variable "public_subnet_cidr" {
-    description = "This is my public subnet cidr range"
-}
-variable "vpc_cidr" {
-    description = "This is my cidr for terraform vpc"
-}
