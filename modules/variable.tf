@@ -6,6 +6,7 @@ variable "instance_count" {
 
 variable "ami_id" {
   description = "The ID of the AMI to use for EC2 instances"
+  default = ""
 }
 
 variable "instance_type" {
@@ -14,10 +15,10 @@ variable "instance_type" {
 }
 
 
-variable "aws_region" {
-    description = "This is region where instance want to be create"
-    default = "ap-northeast-3"
+# variable "aws_region" {
+#     description = "This is region where instance want to be create"
+#     default = "ap-northeast-3"
   
-}
+# }
 
 # Add more variables as needed
