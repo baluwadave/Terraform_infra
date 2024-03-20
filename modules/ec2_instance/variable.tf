@@ -6,6 +6,7 @@ variable "instance_count" {
 
 variable "ami_id" {
   description = "The ID of the AMI to use for EC2 instances"
+  default = "ami-021a9d8a7dda97aa5"
 }
 
 variable "instance_type" {
