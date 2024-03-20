@@ -15,6 +15,12 @@ variable "instance_type" {
 }
 
 
+variable "key_name" {
+    default = "pair"
+    description = "This is My key pair for this region"
+}
+
+
 # variable "aws_region" {
 #     description = "This is region where instance want to be create"
 #     default = "ap-northeast-3"
