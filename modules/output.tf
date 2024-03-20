@@ -10,6 +10,6 @@ output "instance_ids" {
 
 # Add more outputs as needed
 output "subnet_id1" {
-  value = module.vpc.public-subnet.id
+  value = module.aws_vpc.subnet_id1.subnet_id
   description="This is my public subnet id"
 }
