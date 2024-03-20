@@ -34,7 +34,7 @@ module "my_instances" {
   ami_id         = var.ami_id
   instance_type  = var.instance_type
   key_name       = var.key_name
-  subnet_id = var.subnet_id
+  subnet_id = module.vpc.public_subnet_id
 }
 
 # Other configurations can be added here
