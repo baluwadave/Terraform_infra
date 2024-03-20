@@ -1,6 +1,22 @@
-# Define AWS provider
+
+
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.41.0"
+    }
+  }
+}
+
+
+
 provider "aws" {
-  region = var.aws_region
+    region = "ap-northeast-3"
+    shared_config_files =["/root/.aws/config"]  
+    shared_credentials_files = ["/root/.aws/credentials"]
+    # profile = "balu"
 }
 
 # Use the EC2 instances module
