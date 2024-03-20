@@ -28,7 +28,7 @@ provider "aws" {
 
 # Use the EC2 instances module
 module "my_instances" {
-  depends_on = [ module.vpc.public_subnet_id ]
+#   depends_on = [ module.vpc.public_subnet_id ]
   source = "./ec2_instance"
   instance_count = var.instance_count
   ami_id         = var.ami_id
