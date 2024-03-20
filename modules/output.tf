@@ -10,6 +10,6 @@ output "instance_ids" {
 
 # Add more outputs as needed
 output "subnet_id1" {
-  value = module.terraform-vpc.public_subnet_id
+  value = module.vpc.public_subnet_id
   description="This is my public subnet id"
 }
