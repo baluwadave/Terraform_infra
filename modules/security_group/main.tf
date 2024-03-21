@@ -10,7 +10,7 @@ resource "aws_security_group" "Terraform-sg" {
 
   # Ingress rules
   dynamic "ingress" {
-    for_each = [22,80,443,3000,9090,9100]
+    for_each = length([22,80,443,3000,9090,9100])
     content {
       from_port   = ingress.value
       to_port     = ingress.value
@@ -21,7 +21,7 @@ resource "aws_security_group" "Terraform-sg" {
 
   # Egress rules (Allow all traffic out)
   dynamic "egress" {
-    for_each = [22,80,443,3000,9090,9100]
+    for_each = length([22,80,443,3000,9090,9100])
         content {
       from_port   = egress.value
       to_port     = egress.value
