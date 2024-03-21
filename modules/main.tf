@@ -77,3 +77,13 @@ module "alb" {
 
  # Replace with your security group IDs
 }
+
+
+
+
+
+resource "aws_lb_target_group_attachment" "target_attachment" {
+  count = length(module.my_instances.instance_ids) 
+  target_group_arn = module.alb.target_group.arn
+  target_id        = module.my_instances1.instance_ids[count.index]  # Replace with your target instance ID
+}
