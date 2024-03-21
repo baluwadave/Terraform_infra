@@ -8,13 +8,23 @@ resource "aws_vpc" "terraform-vpc" {
   }
 }
 
-resource "aws_subnet" "public-subnet" {
+resource "aws_subnet" "public-subnet-1a" {
   cidr_block        = var.public_subnet_cidr
   vpc_id            = aws_vpc.terraform-vpc.id
   availability_zone = "ap-northeast-3a"
 
   tags = {
     Name = "Public-Subnet-1"
+  }
+}
+
+resource "aws_subnet" "public-subnet-2a" {
+  cidr_block        = var.public_subnet_cidr
+  vpc_id            = aws_vpc.terraform-vpc.id
+  availability_zone = "ap-northeast-3c"
+
+  tags = {
+    Name = "Public-Subnet-2"
   }
 }
 
