@@ -38,6 +38,18 @@ module "my_instances" {
   Terraform_sg = module.Terraform_sg.Terraform_sg
 }
 
+
+module "my_instances1" {
+#   depends_on = [ module.vpc.public_subnet_id ]
+  source = "./ec2_instance"
+  instance_count = var.instance_count
+  ami_id         = var.ami_id
+  instance_type  = var.instance_type
+  key_name       = var.key_name
+  subnet_id = module.vpc.public_subnet_2a
+  Terraform_sg = module.Terraform_sg.Terraform_sg
+}
+
 # Other configurations can be added here
 module "vpc" {
   source              = "./vpc"
