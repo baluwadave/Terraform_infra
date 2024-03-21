@@ -5,7 +5,7 @@ resource "aws_instance" "my_instances" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id =var.subnet_id
-  vpc_security_group_ids = var.Terraform_sg
+  vpc_security_group_ids = [var.Terraform_sg]
   key_name = var.key_name
   associate_public_ip_address = true
 
