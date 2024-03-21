@@ -5,7 +5,7 @@ resource "aws_security_group" "Terraform-sg" {
   vpc_id = var.vpc # Replace with your VPC ID
 
   tags = {
-    Name=Terraform-sg
+    Name="Terraform-sg"
   }
 
   # Ingress rules
