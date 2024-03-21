@@ -13,3 +13,4 @@ output "subnet_id1" {
   value = module.vpc.public_subnet_id
   description="This is my public subnet id"
 }
+
