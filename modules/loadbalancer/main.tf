@@ -15,11 +15,15 @@ resource "aws_lb_listener" "alb_listener" {
 
   default_action {
     type             = "fixed-response"
-    # status_code      = "200"
-    # content_type     = "text/plain"
-    # message_body     = "Hello from ALB!"
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "Hello from ALB!"
+      status_code  = "200"
+    }
   }
+
 }
+
 
 resource "aws_lb_target_group" "target_group" {
   name        = var.target_group_name
