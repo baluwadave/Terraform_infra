@@ -81,9 +81,3 @@ module "alb" {
 
 
 
-
-resource "aws_lb_target_group_attachment" "target_attachment" {
-  count = length(module.my_instances1.instance_ids)
-  target_group_arn = module.alb.aws_lb_target_group_attachment.target_group_arn
-  target_id        = module.my_instances1.instance_ids[count.index]  # Replace with your target instance ID
-}
