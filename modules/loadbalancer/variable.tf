@@ -12,7 +12,7 @@ variable "subnet_ids" {
 
 # variable "security_group_ids" {
 #   description = "List of security group IDs for the ALB"
-#   type        = list(string)
+#   type        = list(string)  
 # }
 
 variable "target_group_name" {
