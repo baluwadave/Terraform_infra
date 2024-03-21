@@ -28,6 +28,14 @@ resource "aws_lb_target_group" "target_group" {
   protocol    = var.protocol
   vpc_id      = var.vpc_id  
   target_type = "instance"
+    health_check {
+    path                = "/"
+    port                = 8080
+    protocol            = "HTTP"
+    healthy_threshold   = 3
+    unhealthy_threshold = 3
+    matcher             = "200-499"
+  }
 }
 
 
