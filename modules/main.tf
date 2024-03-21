@@ -34,7 +34,7 @@ module "my_instances" {
   ami_id         = var.ami_id
   instance_type  = var.instance_type
   key_name       = var.key_name
-  subnet_id = module.vpc.public_subnet_id
+  subnet_id = [module.vpc.public_subnet_1a,module.vpc.public_subnet_2a]
   Terraform_sg = module.Terraform_sg.Terraform_sg
 }
 
@@ -56,7 +56,7 @@ module "alb" {
   source = "./loadbalancer"
   name = var.name
   vpc_id = module.vpc.vpc_id
-  subnet_ids = module.vpc.public_subnet_id
+  subnet_ids = [module.vpc.public_subnet_1a,module.vpc.public_subnet_2a]
   security_group_ids = module.Terraform_sg.Terraform_sg
   protocol = var.protocol
   target_group_name = var.target_group_name
