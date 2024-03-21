@@ -3,7 +3,7 @@ output "public_subnet_id" {
   description="This is my public subnet id"
 }
 
-output "vpc" {
+output "vpc_id" {
     value = aws_vpc.terraform-vpc.id
     description = "This is my vpc_id which i have created through s script"
 }
