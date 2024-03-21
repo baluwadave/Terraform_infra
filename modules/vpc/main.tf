@@ -9,7 +9,7 @@ resource "aws_vpc" "terraform-vpc" {
 }
 
 resource "aws_subnet" "public-subnet-1a" {
-  cidr_block        = var.public_subnet_cidr
+  cidr_block        = var.public_subnet_cidr_1a
   vpc_id            = aws_vpc.terraform-vpc.id
   availability_zone = "ap-northeast-3a"
 
@@ -19,7 +19,7 @@ resource "aws_subnet" "public-subnet-1a" {
 }
 
 resource "aws_subnet" "public-subnet-2a" {
-  cidr_block        = var.public_subnet_cidr
+  cidr_block        = var.public_subnet_cidr_2a
   vpc_id            = aws_vpc.terraform-vpc.id
   availability_zone = "ap-northeast-3c"
 
