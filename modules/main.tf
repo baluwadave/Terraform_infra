@@ -42,7 +42,7 @@ module "my_instances" {
 module "my_instances1" {
 #   depends_on = [ module.vpc.public_subnet_id ]
   source = "./ec2_instance"
-  instance_count = var.instance_count
+  instance_count = var.instance_count 
   ami_id         = var.ami_id
   instance_type  = var.instance_type
   key_name       = var.key_name
