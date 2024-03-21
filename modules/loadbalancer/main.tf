@@ -22,7 +22,7 @@ resource "aws_lb_listener" "alb_listener" {
     }
   }
 
-}
+  }
 
 
 resource "aws_lb_target_group" "target_group" {
