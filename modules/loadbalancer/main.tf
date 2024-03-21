@@ -29,3 +29,9 @@ resource "aws_lb_target_group" "target_group" {
   target_type = "instance"
 }
 
+
+resource "aws_lb_target_group_attachment" "target_attachment" {
+  count = length(module.my_instances1.instance_ids)
+  target_group_arn = aws_lb_target_group.target_group.arn
+  target_id        = module.my_instances1.instance_ids[count.index]  # Replace with your target instance ID
+}
