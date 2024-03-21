@@ -35,7 +35,7 @@ module "my_instances" {
   instance_type  = var.instance_type
   key_name       = var.key_name
   subnet_id = module.vpc.public_subnet_id
-  vpc_security_group_ids=module.Terraform_sg.id
+  Terraform_sg=module.Terraform_sg.id
 }
 
 # Other configurations can be added here
