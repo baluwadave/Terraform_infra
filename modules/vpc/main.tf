@@ -21,7 +21,7 @@ resource "aws_subnet" "public-subnet-1a" {
 resource "aws_subnet" "public-subnet-2a" {
   cidr_block        = var.public_subnet_cidr_2a
   vpc_id            = aws_vpc.terraform-vpc.id
-  availability_zone = "ap-northeast-3c"
+  availability_zone = "ap-northeast-3b"
 
   tags = {
     Name = "Public-Subnet-2"
@@ -31,7 +31,7 @@ resource "aws_subnet" "public-subnet-2a" {
 resource "aws_subnet" "private-subnet" {
   cidr_block        = var.private_subnet_cidr
   vpc_id            = aws_vpc.terraform-vpc.id
-  availability_zone = "ap-northeast-3b"
+  availability_zone = "ap-northeast-3c"
 
   tags =  {
     Name = "Private-Subnet-1"
