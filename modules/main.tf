@@ -73,7 +73,7 @@ module "alb" {
   # security_group_ids = module.Terraform_sg.Terraform_sg.id
   protocol = var.protocol
   target_group_name = var.target_group_name
-  instance =module.my_instances1.instance_ids
+
 
  # Replace with your security group IDs
 }
