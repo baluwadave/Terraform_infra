@@ -42,7 +42,8 @@ module "my_instances" {
 module "vpc" {
   source              = "./vpc"
   private_subnet_cidr = var.private_subnet_cidr
-  public_subnet_cidr  = var.public_subnet_cidr
+  public_subnet_cidr_1a  = var.public_subnet_cidr_1a
+  public_subnet_2a = var.public_subnet_cidr_2a
   vpc_cidr            = var.vpc_cidr
 }
 module "Terraform_sg" {
