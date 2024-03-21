@@ -2,7 +2,7 @@ resource "aws_security_group" "Terraform-sg" {
   name        = "Terrafrom-sg"
   description = "security group allowing traffic on multiple ports"
 
-  vpc_id = var.vpc # Replace with your VPC ID
+  vpc_id = var.vpc_id# Replace with your VPC ID
 
   tags = {
     Name="Terraform-sg"
