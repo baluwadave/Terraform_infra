@@ -8,6 +8,10 @@ resource "aws_security_group" "Terraform-sg" {
     Name="Terraform-sg"
   }
 
+
+
+
+
   # Ingress rules
   dynamic "ingress" {
     for_each = [22,80,443,3000,9090,9100]
