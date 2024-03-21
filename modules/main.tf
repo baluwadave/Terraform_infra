@@ -49,3 +49,18 @@ module "Terraform_sg" {
   source = "./security_group"
   vpc_id = module.vpc.vpc_id
 }
+
+
+
+module "alb" {
+  source = "./loadbalancer"
+  name = var.name
+  vpc_id = module.vpc.vpc_id
+  subnet_ids = module.vpc.public_subnet_id
+  security_group_ids = module.Terraform_sg.Terraform_sg
+  protocol = var.protocol
+  target_group_name = var.target_group_name
+
+
+ # Replace with your security group IDs
+}

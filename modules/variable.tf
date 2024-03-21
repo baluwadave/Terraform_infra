@@ -38,3 +38,15 @@ variable "private_subnet_cidr" {
 variable "public_subnet_cidr" {
   default = "10.0.2.0/24"
 }
+
+variable "name" {
+  default = "Terraform-alb"
+}
+
+variable "protocol" {
+  default = "HTTP"
+}
+
+variable "target_group_name" {
+  default = "Terraform-target-group"
+}
