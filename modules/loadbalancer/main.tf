@@ -4,7 +4,7 @@ resource "aws_lb" "alb" {
   load_balancer_type = "application"
   security_groups    = var.security_group_ids
   subnets            = var.subnet_ids
-
+  vpc_id =var.vpc_id
   enable_deletion_protection = false
 }
 
@@ -15,9 +15,9 @@ resource "aws_lb_listener" "alb_listener" {
 
   default_action {
     type             = "fixed-response"
-    status_code      = "200"
-    content_type     = "text/plain"
-    message_body     = "Hello from ALB!"
+    # status_code      = "200"
+    # content_type     = "text/plain"
+    # message_body     = "Hello from ALB!"
   }
 }
 
