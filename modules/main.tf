@@ -47,6 +47,6 @@ module "vpc" {
 }
 module "Terraform_sg" {
   source = "./security_group"
-  vpc = module.vpc
+  vpc_id = module.vpc.vpc_id
   
 }
