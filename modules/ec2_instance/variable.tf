@@ -21,7 +21,7 @@ variable "key_name" {
 
 
 variable "subnet_id" {
-  type = list(string)
+  type = string
   description = "This is subnet created while created vpc"
 }
 
