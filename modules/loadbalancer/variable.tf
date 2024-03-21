@@ -23,6 +23,6 @@ variable "target_group_name" {
 variable "protocol" {
     type = string
 }
-variable "instance_ids" {
+# variable "instance_ids" {
     
-}
+# }
