@@ -10,10 +10,10 @@ resource "aws_security_group" "Terraform-sg" {
 
   # Ingress rules
   dynamic "ingress" {
-    for_each = var.ports
+    for_each = [22,80,443,3000,9090,9100]
     content {
-      from_port   = 20
-      to_port     = 65000
+      from_port   = ingress.value
+      to_port     = ingress.value
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]  # Allowing traffic from any IPv4 address, you may need to adjust this
     }
@@ -21,10 +21,10 @@ resource "aws_security_group" "Terraform-sg" {
 
   # Egress rules (Allow all traffic out)
   dynamic "egress" {
-    for_each = var.ports
+    for_each = [22,80,443,3000,9090,9100]
         content {
-      from_port   = 20
-      to_port     = 65000
+      from_port   = egress.value
+      to_port     = egress.value
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]  # Allowing traffic from any IPv4 address, you may need to adjust this
     }
