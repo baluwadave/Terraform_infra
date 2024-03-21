@@ -1,7 +1,7 @@
 variable "instance_count" {
   description = "The number of EC2 instances to create"
   type        = number
-  default     = 3
+  default     = 5
 }
 
 variable "ami_id" {
