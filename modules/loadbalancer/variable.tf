@@ -3,7 +3,7 @@ variable "name" {
   type        = string
 }
 
-variable "vpc_id" {}
+variable "vpc_id" { }
 
 variable "subnet_ids" {
   description = "List of subnet IDs for the ALB"
@@ -12,7 +12,7 @@ variable "subnet_ids" {
 
 variable "security_group_ids" {
   description = "List of security group IDs for the ALB"
-  type        = list(string)
+  type        = string
 }
 
 variable "target_group_name" {
