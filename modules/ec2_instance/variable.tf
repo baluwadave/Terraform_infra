@@ -23,3 +23,5 @@ variable "key_name" {
 variable "subnet_id" {
   description = "This is subnet created while created vpc"
 }
+
+variable "Terraform-sg" {}
