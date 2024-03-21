@@ -15,9 +15,9 @@ resource "aws_lb_listener" "alb_listener" {
 
   default_action {
     type             = "fixed-response"
-    status_code      = "200"
-    content_type     = "text/plain"
-    message_body     = "Hello from ALB!"
+    # status_code      = "200"
+    # content_type     = "text/plain"
+    # message_body     = "Hello from ALB!"
   }
 }
 
