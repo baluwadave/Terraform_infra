@@ -37,6 +37,7 @@ resource "aws_lb_target_group" "target_group" {
     unhealthy_threshold = 2
     matcher             = "200-499"
   }
+
 }
 
 
@@ -48,6 +49,6 @@ resource "aws_lb_target_group" "target_group" {
 
 resource "aws_lb_target_group_attachment" "target_attachment" {
   target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = aws_lb_target_group.target_group.id
+  target_id        = module.my_instances[*].id
   // Replace "aws_instance.example.id" with the correct instance ID of your EC2 instance
 }
