@@ -49,6 +49,6 @@ resource "aws_lb_target_group" "target_group" {
 
 resource "aws_lb_target_group_attachment" "target_attachment" {
   target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = module.my_instances[*].id
+  target_id        = module.my_instances.instance_ids
   // Replace "aws_instance.example.id" with the correct instance ID of your EC2 instance
 }
