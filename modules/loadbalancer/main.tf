@@ -76,6 +76,6 @@ resource "aws_lb_target_group" "target_group" {
 # }
 resource "aws_lb_target_group_attachment" "target_attachment" {
   for_each         = aws_instance.my_instances2
-  target_group_arn = aws_lb_target_group.my_target_group.arn
+  target_group_arn = aws_lb_target_group.target_group.arn
   target_id        = each.value.id
 }
