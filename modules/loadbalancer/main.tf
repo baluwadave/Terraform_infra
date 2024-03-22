@@ -18,7 +18,7 @@ resource "aws_instance" "my_instances2" {
   vpc_security_group_ids = [var.Terraform_sg]
   key_name = var.key_name
   associate_public_ip_address = true
-    user_data = file("${path.module}/user_data_script.sh")
+  user_data = file("${path.module}/user_data_script.sh")
   tags = {
     Name = "Instance-${count.index}"
   }
