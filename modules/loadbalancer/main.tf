@@ -29,6 +29,7 @@ resource "aws_lb_target_group" "target_group" {
   vpc_id      = var.vpc_id  
   target_type = "instance"
     health_check {
+    enabled             = true
     path                = "/"
     port                = 80
     protocol            = "HTTP"
