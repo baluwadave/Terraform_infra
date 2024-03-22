@@ -5,7 +5,7 @@ resource "aws_lb" "alb" {
   security_groups  =   var.security_group_ids
   subnets            = var.subnet_ids
 #  depends_on = [ vpc.vpc_id ]
-  # vpc_id =var.vpc_id
+  vpc_id =module.vpc.vpc_id
   enable_deletion_protection = false
 }
 
