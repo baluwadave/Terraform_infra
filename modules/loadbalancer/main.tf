@@ -2,10 +2,10 @@ resource "aws_lb" "alb" {
   name               = var.name
   internal           = false
   load_balancer_type = "application"
-  # security_groups  =   var.security_group_ids
+  security_groups  =   var.security_group_ids
   subnets            = var.subnet_ids
   
-  # vpc_id =var.vpc_id
+  vpc_id =var.vpc_id
   enable_deletion_protection = false
 }
 
@@ -30,10 +30,10 @@ resource "aws_lb_target_group" "target_group" {
   target_type = "instance"
     health_check {
     path                = "/"
-    port                = 8080
+    port                = 80
     protocol            = "HTTP"
-    healthy_threshold   = 3
-    unhealthy_threshold = 3
+    healthy_threshold   = 2
+    unhealthy_threshold = 2
     matcher             = "200-499"
   }
 }
