@@ -68,9 +68,14 @@ resource "aws_lb_target_group" "target_group" {
 #   target_id        = aws_lb_target_group.target_group.id # Replace with your target instance ID
 # }
 
-resource "aws_lb_target_group_attachment" "target_attachment" {
+# resource "aws_lb_target_group_attachment" "target_attachment" {
   
-  target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = aws_instance.my_instances2[count.index].id  
-  // Replace "aws_instance.example.id" with the correct instance ID of your EC2 instance
+#   target_group_arn = aws_lb_target_group.target_group.arn
+#   target_id        = aws_instance.my_instances2[count.index].id  
+#   // Replace "aws_instance.example.id" with the correct instance ID of your EC2 instance
+# }
+resource "aws_lb_target_group_attachment" "target_attachment" {
+  for_each         = aws_instance.my_instances2
+  target_group_arn = aws_lb_target_group.my_target_group.arn
+  target_id        = each.value.id
 }
