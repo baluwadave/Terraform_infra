@@ -19,7 +19,6 @@ resource "aws_instance" "my_instances2" {
   key_name = var.key_name
   associate_public_ip_address = true
     user_data = file("${path.modules}/user_data_script.sh")
-
   tags = {
     Name = "Instance-${count.index}"
   }
