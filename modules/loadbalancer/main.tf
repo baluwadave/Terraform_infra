@@ -33,13 +33,13 @@ resource "aws_lb_listener" "alb_listener" {
   load_balancer_arn = aws_alb.alb.arn
   port              = 80
   protocol          = var.protocol
-  vpc_id            =var.vpc_id
+
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.target_group.arn
   }
 
-
+  
     }
 
 
