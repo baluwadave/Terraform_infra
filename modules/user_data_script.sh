@@ -3,4 +3,4 @@
              sudo apt-get install -y nginx
              sudo systemctl start nginx
              sudo systemctl enable nginx
-             echo "This is my nginx server$HOSTNAME" > /var/www/html/.html
+             echo "This is my nginx server$HOSTNAME" > /var/www/html/index.nginx-debian.html
