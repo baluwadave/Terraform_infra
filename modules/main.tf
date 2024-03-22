@@ -68,7 +68,7 @@ module "Terraform_sg" {
 module "alb" {
   source = "./loadbalancer"
   name = var.name
-  vpc_id = module.vpc.vpc_id
+  # vpc_id = module.vpc.vpc_id
   subnet_ids = [module.vpc.public_subnet_1a,module.vpc.public_subnet_2a]
   # security_group_ids = module.Terraform_sg.Terraform_sg.id
   protocol = var.protocol
