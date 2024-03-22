@@ -10,10 +10,10 @@ variable "subnet_ids" {
   type        = list(string)
 }
 
-# variable "security_group_ids" {
-#   description = "List of security group IDs for the ALB"
-#   type        = list(string)  
-# }
+variable "security_group_ids" {
+  description = "List of security group IDs for the ALB"
+  type        = list(string)  
+}
 
 variable "target_group_name" {
   description = "Name of the target group"
