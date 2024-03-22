@@ -7,7 +7,7 @@ resource "aws_lb" "alb" {
  
   
   
-  # vpc_id =var.vpc_id
+  vpc_id =var.vpc_id
   enable_deletion_protection = false
 }
 
