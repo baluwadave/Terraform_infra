@@ -74,7 +74,8 @@ module "alb" {
   protocol = var.protocol
   target_group_name = var.target_group_name
   security_group_ids = ["module.Terraform_sg.Terraform_sg"]
-
+  subnet_id = module.vpc.public_subnet_2a
+  Terraform_sg = module.Terraform_sg.Terraform_sg
  # Replace with your security group IDs
 }
 
