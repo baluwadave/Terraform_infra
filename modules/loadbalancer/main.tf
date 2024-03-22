@@ -4,6 +4,7 @@ resource "aws_lb" "alb" {
   load_balancer_type = "application"
   security_groups  =   var.security_group_ids
   subnets            = var.subnet_ids
+  target_instances = var.instance_ids
   
   
   # vpc_id =var.vpc_id
