@@ -4,9 +4,7 @@ resource "aws_lb" "alb" {
   load_balancer_type = "application"
   security_groups  =   var.security_group_ids
   subnets            = var.subnet_ids
- 
-  
-  
+ depends_on = [ vpc ]
   vpc_id =var.vpc_id
   enable_deletion_protection = false
 }
