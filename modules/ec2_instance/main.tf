@@ -9,7 +9,14 @@ resource "aws_instance" "my_instances" {
   key_name = var.key_name
   associate_public_ip_address = true
   # user_data = file("${path.modules}/user_data_script.sh")
-
+    user_data = <<-EOF
+    #!/bin/bash
+    sudo apt-get update
+    sudo apt-get install -y nginx
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+    echo "This is my nginx server$HOSTNAME" > /var/www/html/index.nginx-debian.html
+    EOF
   tags = {
     Name = "Instance-${count.index}"
   }

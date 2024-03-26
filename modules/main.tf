@@ -74,11 +74,14 @@ module "alb" {
   protocol = var.protocol
   target_group_name = var.target_group_name
   security_group_ids = [module.Terraform_sg.Terraform_sg]
-  subnet_id = module.vpc.public_subnet_2a
-  Terraform_sg = module.Terraform_sg.Terraform_sg
+  # Terraform_sg = module.Terraform_sg.Terraform_sg
  # Replace with your security group IDs
 }
 
 
-
+resource "aws_lb_target_group_attachment" "target_attachment_module" {
+  count            = min(length(module.ec2_instance.my_instances), 2)
+  target_group_arn = module.load_balancer.aws_lb_target_group.target_group.arn
+  target_id        = module.ec2_instance.my_instances[count.index].id
+}
 

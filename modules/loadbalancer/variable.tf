@@ -53,10 +53,10 @@ variable "protocol" {
 
 
 
-variable "subnet_id" {
-  type = string
-  description = "This is subnet created while created vpc"
-}
+# variable "subnet_id" {
+#   type = string
+#   description = "This is subnet created while created vpc"
+# }
 
 # variable "Terraform_sg" {
 #   type = string
