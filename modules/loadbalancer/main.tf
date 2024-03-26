@@ -64,7 +64,7 @@ resource "aws_lb_target_group" "target_group" {
     port                = 80
     protocol            = "HTTP"
     unhealthy_threshold = 2
-    matcher             = "200-499"
+    matcher             = "200"
   }
 
 }
