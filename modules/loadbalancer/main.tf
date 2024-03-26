@@ -81,8 +81,8 @@ resource "aws_lb_target_group" "target_group" {
 #   target_id        = aws_instance.my_instances2[count.index].id  
 #   // Replace "aws_instance.example.id" with the correct instance ID of your EC2 instance
 # }
-resource "aws_lb_target_group_attachment" "target_attachment" {
-  for_each         = { for idx, instance in aws_instance.my_instances2 : idx => instance.id }
-  target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = each.value
-}
+# resource "aws_lb_target_group_attachment" "target_attachment" {
+#   for_each         = { for idx, instance in aws_instance.my_instances2 : idx => instance.id }
+#   target_group_arn = aws_lb_target_group.target_group.arn
+#   target_id        = each.value
+# }
