@@ -9,27 +9,27 @@ resource "aws_alb" "alb" {
   enable_deletion_protection = false
 }
 
-resource "aws_instance" "my_instances2" {
-#   depends_on = [ vpc.subnet_id]
-  count         = var.instance_count
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  subnet_id =var.subnet_id
-  vpc_security_group_ids = [var.Terraform_sg]
-  key_name = var.key_name
-  associate_public_ip_address = true
-    user_data = <<-EOF
-    #!/bin/bash
-    sudo apt-get update
-    sudo apt-get install -y nginx
-    sudo systemctl start nginx
-    sudo systemctl enable nginx
-    echo "This is my nginx server$HOSTNAME" > /var/www/html/index.nginx-debian.html
-    EOF
-  tags = {
-    Name = "Instance-${count.index}"
-  }
-}
+# resource "aws_instance" "my_instances2" {
+# #   depends_on = [ vpc.subnet_id]
+#   count         = var.instance_count
+#   ami           = var.ami_id
+#   instance_type = var.instance_type
+#   subnet_id =var.subnet_id
+#   vpc_security_group_ids = [var.Terraform_sg]
+#   key_name = var.key_name
+#   associate_public_ip_address = true
+#     user_data = <<-EOF
+#     #!/bin/bash
+#     sudo apt-get update
+#     sudo apt-get install -y nginx
+#     sudo systemctl start nginx
+#     sudo systemctl enable nginx
+#     echo "This is my nginx server$HOSTNAME" > /var/www/html/index.nginx-debian.html
+#     EOF
+#   tags = {
+#     Name = "Instance-${count.index}"
+#   }
+# }
 
 
 
