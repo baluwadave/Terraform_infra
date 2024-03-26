@@ -81,7 +81,7 @@ module "alb" {
 
 resource "aws_lb_target_group_attachment" "target_attachment_module" {
   count            = min(length(module.my_instances.instance_ids), 2)
-  target_group_arn = module.alb.aws_lb_target_group.target_group_arn
+  target_group_arn = module.alb.target_group_arn
   target_id        = module.my_instances.instance_ids[count.index].id
 }
 
