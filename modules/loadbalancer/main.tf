@@ -58,11 +58,13 @@ resource "aws_lb_target_group" "target_group" {
   target_type = "instance"
     health_check {
     enabled             = true
+    interval            = 30
+    timeout             = 5  
     path                = "/"
     port                = 80
     protocol            = "HTTP"
-    healthy_threshold   = 2
-    unhealthy_threshold = 2
+    healthy_threshold   = 3
+    unhealthy_threshold = 3
     matcher             = "200-499"
   }
 
