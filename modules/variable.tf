@@ -20,12 +20,6 @@ variable "key_name" {
     description = "This is My key pair for this region"
 }
 
-
-# variable "aws_region" {
-#     description = "This is region where instance want to be create"
-#     default = "ap-northeast-3"
-  
-# }
 variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
