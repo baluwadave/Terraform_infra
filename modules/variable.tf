@@ -1,7 +1,7 @@
 variable "instance_count" {
   description = "The number of EC2 instances to create"
   type        = number
-  default     = 6
+  default     = 2
 }
 
 variable "ami_id" {
@@ -16,7 +16,7 @@ variable "instance_type" {
 
 
 variable "key_name" {
-    default = "pair"
+    default = "balu_apnorteast"
     description = "This is My key pair for this region"
 }
 
